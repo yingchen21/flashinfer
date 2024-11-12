@@ -42,8 +42,8 @@ struct paged_kv_t {
   uint32_t stride_h;
 
   // Internal layout:
-  // [max_num_pages, num_heads, page_size, head_dim] if layout == HND
-  // [max_num_pages, page_size, num_heads, head_dim] if layout == NHD
+  // [max_num_pages, num_heads, page_size, head_dim] if layout == HND: fraged with half page
+  // [max_num_pages, page_size, num_heads, head_dim] if layout == NHD: always contiguous
   DType* k_data;
   DType* v_data;
   IdType* indices;

@@ -38,6 +38,10 @@ struct SinglePrefillParams {
   DTypeO* o;
   float* lse;
   float* alibi_slopes;
+  DTypeQ* q_grad;
+  DTypeKV* k_grad;
+  DTypeKV* v_grad;
+  DTypeO* o_grad;
   uint32_t qo_len;
   uint32_t kv_len;
   uint32_t num_qo_heads;
